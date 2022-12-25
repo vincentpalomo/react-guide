@@ -37,18 +37,16 @@ React Scripts utilizes this file (plus our public/index.html) to create the Reac
 
 ```jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 const App = () => {
-  return <div>
-    Hello World
-  </div>
-}
+  return <div>Hello World</div>;
+};
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('app'),
-);
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+root.render(<App tab='home' />);
 ```
 
 ### package.json
